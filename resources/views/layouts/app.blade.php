@@ -20,13 +20,12 @@
         <header class="bg-menu-gray py-6">
             <div class="container mx-auto flex justify-between items-center px-6">
                 <div>
-                    <a href="{{ url('/') }}" class="text-lg font-semibold text-gray-100 no-underline">
-                        Test
+                    <a href="{{ url('/') }}" class="text-pri-color font-semibold text-gray-100 no-underline">
+                        Postd
                     </a>
                 </div>
-                <nav class="space-x-4 text-gray-300 text-sm sm:text-base">
-                    <a class="no-underline hover:underline" href="/">Home</a>
-                    <a class="no-underline hover:underline" href="/blog">Blog</a>
+                <nav class="space-x-4 text-pri-color text-sm sm:text-base">
+                    <a class="no-underline hover:underline" href="/blog">Home</a>
                     @guest
                         <a class="no-underline hover:underline" href="{{ route('login') }}">{{ __('Login') }}</a>
                         @if (Route::has('register'))
