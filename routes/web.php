@@ -19,7 +19,12 @@ Route::get('/', [PagesController::class, 'index']);
 
 Route::resource('/blog', PostsController::class);
 
+
+Route::get('/user', [\App\Http\Controllers\UserController::class, 'index']);
+
 Route::get('/contact', [\App\Http\Controllers\ContactController::class, 'index']);
+
+Route::get('/confirmSent', [\App\Http\Controllers\ConfirmController::class, 'index']);
 
 Route::get('/landing', [\App\Http\Controllers\LandingController::class, 'index']);
 

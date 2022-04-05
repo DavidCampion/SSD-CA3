@@ -11,47 +11,62 @@
         </div>
     </div>
 
-    <div>
-        <h1>Get in Contact with us </h1>
+    <div class="w-4/5 m-auto pt-20">
+        <form 
+            action="/confirmSent"
+            method="POST"
+            enctype="multipart/form-data">
+            @csrf
 
-        <div id ="">
-            <form id="contactUs" name="contactUs" method="post" action="confirmSent.blade.php" onsubmit = "">
-                
-                
-                <fieldset>
+            <fieldset>
                     
-                <legend>Personal Data</legend>
+                <legend class="sm:text-white text-5xl uppercase font-bold text-shadow-md pb-14">Personal Data</legend>
+
+            <input 
+                type="text"
+                name="userName"
+                placeholder="Please Enter Your Name!!"
+                class="bg-transparent block border-b-2 w-full h-20 text-6xl outline-none">
+
+                <input 
+                type="email"
+                name="email"
+                placeholder="Please Enter Your Email!!"
+                class="bg-transparent block border-b-2 w-full h-20 text-6xl outline-none"> 
                 
-                <label> Please enter your name:  </label>
-                <input type="text" name ="username" placeholder="name..."/>
-                
-                <br/><br/>
-                <label> Please enter your email: </label>
-                <input type ="email" name="email" placeholder="youremail@.com...">
-                
-                <br/><br/>
-                <label> Please enter your phone: </label>
-                <input type ="number" name="phone" placeholder="(08x) XXX-XXXX" >
-               
-                <br/><br/>
-                
-                </fieldset>
-                
-                <br/>
+                <input 
+                type="text"
+                name="phoneNumber"
+                placeholder="Optional"
+                class="bg-transparent block border-b-2 w-full h-20 text-6xl outline-none">
+                <br><br><br>
+
+            </fieldset>
             
-                <fieldset>
-                    
-                <legend>Comments</legend>
-                
-                <textarea rows="4" cols="50" name="comment" form ="contactUs" >
-                </textarea>
-                
-                </fieldset>
-                <br/>
-                
-                
-                <input type ="submit" name= "submit" />
-                <input type="reset" name="reset" value = "Clear"/>
-            </form>
-        
+            <fieldset>
+
+                <legend class="sm:text-white text-5xl uppercase font-bold text-shadow-md pb-14">Your Questions</legend>
+
+    
+            <textarea 
+                rows="4" cols="50"
+                name="comments"
+                placeholder="Feedback...."
+                class="py-20 bg-transparent block border-b-2 w-full h-60 text-xl outline-none">
+            </textarea>
+    
+            
+            <button    
+                type="submit"
+                class="uppercase mt-15 bg-blue-500 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
+                Submit Post
+            </button>
+
+            <button    
+                type="reset"
+                class="uppercase mt-15 bg-blue-500 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
+                Reset
+            </button>
+        </form>
+    </div>    
 @endsection
