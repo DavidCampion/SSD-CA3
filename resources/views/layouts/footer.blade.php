@@ -26,6 +26,18 @@
                         Register
                     </a>
                 </li>
+
+                <li class="pb-1">
+                    <a href="/contact">
+                        Contact Us
+                    </a>
+                </li>
+
+                <li class="pb-1">
+                    <a href="/landingPage">
+                        LandinPage
+                    </a>
+                </li>
             </ul>
         </div>
 
