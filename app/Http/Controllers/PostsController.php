@@ -114,6 +114,22 @@ class PostsController extends Controller
             ->with('message', 'Your post has been updated!');
     }
 
+   /*   public function updateLikes(Request $request, $slug)
+    {
+        
+        Post::where('slug', $slug)
+            ->update([
+                
+                'Likes' =>$request->input('Likes'),
+                
+                'slug' => SlugService::createSlug(Post::class, 'slug', $request->title),
+                'user_id' => auth()->user()->id
+            ]);
+
+        return redirect('/blog')
+             ->with('message', 'Your post has been updated!'); 
+    } */
+
     /**
      * Remove the specified resource from storage.
      *

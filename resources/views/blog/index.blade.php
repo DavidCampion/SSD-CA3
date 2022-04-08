@@ -25,6 +25,8 @@
             <span class="text-gray-500">
                 <span class="font-bold italic text-pri-color">{{ $post->user->name }}</span>
             </span>
+
+            
             <div class="post-image">
                 <img src="{{ asset('images/' . $post->image_path) }}" alt="">
             </div>
@@ -39,6 +41,37 @@
                 <p class="text-xl text-sec-color pt-8 pb-10 leading-8 font-light">
                     {{ $post->description }}
                 </p>
+                
+
+                {{-- <button
+                type="submit"
+                value="{{$post->Likes}}" 
+
+                >
+                Like
+                </button> --}}
+
+                <span class="font-bold italic text-pri-color">
+                    <form 
+                        action="/blog"
+                        method="POST">
+                        @csrf
+                         {{--@method('increment') commented out because it says the post method dosent accept increment ?? dunno why --}}
+                        
+
+                        <button
+                        type="submit" 
+                        class="text-gray-700 italic hover:text-gray-900 pb-1 border-b-2"
+                        >
+                        Like:    {{$post->Likes}}
+                        </button>
+                        
+
+                    </form>
+                </span>
+                
+
+                   
 
                 <a href="/blog/{{ $post->slug }}" class="link-button"></a>
 
@@ -63,6 +96,7 @@
                                 type="submit">
                                 Delete
                             </button>
+                            
 
                         </form>
                     </span>
