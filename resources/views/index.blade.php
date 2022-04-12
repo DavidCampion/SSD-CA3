@@ -8,7 +8,7 @@
                     Do you want to become a developer?
                 </h1>
                 <a 
-                    href="/blog"
+                    href="/feed"
                     class="text-center bg-gray-50 text-gray-700 py-2 px-4 font-bold text-xl uppercase">
                     Read More
                 </a>

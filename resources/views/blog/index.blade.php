@@ -13,7 +13,7 @@
 @if (Auth::check())
     <div class="pt-15 w-4/5 m-auto">
         <a 
-            href="/blog/create"
+            href="/feed/create"
             class="bg-blue-500 uppercase bg-transparent text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl">
             Create post
         </a>
@@ -53,7 +53,7 @@
 
                 <span class="font-bold italic text-pri-color">
                     <form 
-                        action="/blog"
+                        action="/feed"
                         method="POST">
                         @csrf
                          {{--@method('increment') commented out because it says the post method dosent accept increment ?? dunno why --}}
@@ -73,12 +73,12 @@
 
                    
 
-                <a href="/blog/{{ $post->slug }}" class="link-button"></a>
+                <a href="/feed/{{ $post->slug }}" class="link-button"></a>
 
                 @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
                     <span class="float-right">
                         <a 
-                            href="/blog/{{ $post->slug }}/edit"
+                            href="/feed/{{ $post->slug }}/edit"
                             class="text-gray-700 italic hover:text-gray-900 pb-1 border-b-2">
                             Edit
                         </a>
@@ -86,7 +86,7 @@
 
                     <span class="float-right">
                         <form 
-                            action="/blog/{{ $post->slug }}"
+                            action="/feed/{{ $post->slug }}"
                             method="POST">
                             @csrf
                             @method('delete')

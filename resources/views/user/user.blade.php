@@ -38,12 +38,12 @@
                     {{ $post->description }}
                 </p>
 
-                <a href="/blog/{{ $post->slug }}" class="link-button"></a>
+                <a href="/feed/{{ $post->slug }}" class="link-button"></a>
 
                 @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
                     <span class="float-right">
                         <a 
-                            href="/blog/{{ $post->slug }}/edit"
+                            href="/feed/{{ $post->slug }}/edit"
                             class="text-gray-700 italic hover:text-gray-900 pb-1 border-b-2">
                             Edit
                         </a>
@@ -51,7 +51,7 @@
 
                     <span class="float-right">
                         <form 
-                            action="/blog/{{ $post->slug }}"
+                            action="/feed/{{ $post->slug }}"
                             method="POST">
                             @csrf
                             @method('delete')

@@ -60,7 +60,7 @@ class PostsController extends Controller
             'user_id' => auth()->user()->id
         ]);
 
-        return redirect('/blog')
+        return redirect('/feed')
             ->with('message', 'Your post has been added!');
     }
 
@@ -110,7 +110,7 @@ class PostsController extends Controller
                 'user_id' => auth()->user()->id
             ]);
 
-        return redirect('/blog')
+        return redirect('/feed')
             ->with('message', 'Your post has been updated!');
     }
 
@@ -141,7 +141,7 @@ class PostsController extends Controller
         $post = Post::where('slug', $slug);
         $post->delete();
 
-        return redirect('/blog')
+        return redirect('/feed')
             ->with('message', 'Your post has been deleted!');
     }
 }

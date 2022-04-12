@@ -25,7 +25,7 @@
                     </a>
                 </div>
                 <nav class="space-x-4 text-pri-color text-sm sm:text-base">
-                    <a class="no-underline hover:underline" href="/blog">Home</a>
+                    <a class="no-underline hover:underline" href="/feed">Feed</a>
                     <a class="no-underline hover:underline" href="/contact">Contact Us</a>
                    <a class="no-underline hover:underline" href="/landing">LandingPage</a>
                     @guest
@@ -35,7 +35,7 @@
                         @endif
                     @else
                         
-                        <a class="no-underline hover: underline" href="/user"> {{Auth::user()->name}}'s Account</a>
+                        <a class="no-underline hover: underline" href="/user/{{Auth::user()->id}}"> {{Auth::user()->name}}'s Account</a>
                     
 
                         <a href="{{ route('logout') }}"

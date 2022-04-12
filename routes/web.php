@@ -17,10 +17,10 @@ use App\Http\Controllers\PostsController;
 
 Route::get('/', [PagesController::class, 'index']);
 
-Route::resource('/blog', PostsController::class);
+Route::resource('/feed', PostsController::class);
 
 
-Route::get('/user', [\App\Http\Controllers\UserController::class, 'index']);
+Route::get('/user/{id}', [\App\Http\Controllers\UserController::class, 'index']);
 
 Route::get('/contact', [\App\Http\Controllers\ContactController::class, 'index']);
 
