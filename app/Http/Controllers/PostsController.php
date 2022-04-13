@@ -20,7 +20,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        return view('blog.index')
+        return view('feed.index')
             ->with('posts', Post::orderBy('updated_at', 'DESC')->get());
     }
 
@@ -31,7 +31,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view('blog.create');
+        return view('feed.create');
     }
 
     /**
@@ -72,7 +72,7 @@ class PostsController extends Controller
      */
     public function show($slug)
     {
-        return view('blog.show')
+        return view('feed.show')
             ->with('post', Post::where('slug', $slug)->first());
     }
 
@@ -84,7 +84,7 @@ class PostsController extends Controller
      */
     public function edit($slug)
     {
-        return view('blog.edit')
+        return view('feed.edit')
             ->with('post', Post::where('slug', $slug)->first());
     }
 
@@ -126,7 +126,7 @@ class PostsController extends Controller
                 'user_id' => auth()->user()->id
             ]);
 
-        return redirect('/blog')
+        return redirect('/feed')
              ->with('message', 'Your post has been updated!'); 
     } */
 
