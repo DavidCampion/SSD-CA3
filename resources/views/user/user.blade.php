@@ -13,13 +13,15 @@
         </ul>
     </div>
 @endif
-
-
 <div class="post-grid">
     @foreach ($posts as $post)
-    <div class="w-4/5 m-auto pt-20">
-        <h1 class="sm:text-white text-5xl uppercase font-bold text-shadow-md pb-14">{{ $post->user->name }} Posts</h1>   
-    </div>
+        @if ($loop->first)
+            <h1 class="sm:text-white text-5xl uppercase font-bold text-shadow-md pb-14">{{ $post->user->name }} Posts</h1>  
+        @endif
+    @endforeach
+</div>
+<div class="post-grid">
+    @foreach ($posts as $post)
         <div class="post-block bg-post-gray">
             <span class="text-gray-500">
                 <span class="font-bold italic text-pri-color">{{ $post->user->name }}</span>
@@ -39,12 +41,12 @@
                     {{ $post->description }}
                 </p>
 
-                <a href="/blog/{{ $post->slug }}" class="link-button"></a>
+                <a href="/feed/{{ $post->slug }}" class="link-button"></a>
 
                 @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
                     <span class="float-right">
                         <a 
-                            href="/blog/{{ $post->slug }}/edit"
+                            href="/feed/{{ $post->slug }}/edit"
                             class="text-gray-700 italic hover:text-gray-900 pb-1 border-b-2">
                             Edit
                         </a>
@@ -52,7 +54,7 @@
 
                     <span class="float-right">
                         <form 
-                            action="/blog/{{ $post->slug }}"
+                            action="/feed/{{ $post->slug }}"
                             method="POST">
                             @csrf
                             @method('delete')
