@@ -29,10 +29,9 @@
     <form
         class="form" 
         action="/confirmSent"
-        method="POST"
+        method="GET"
         enctype="multipart/form-data">
         @method('GET')
-        @csrf
       
         
             <fieldset>

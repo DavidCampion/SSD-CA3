@@ -59,11 +59,10 @@
                          {{--@method('increment') commented out because it says the post method dosent accept increment ?? dunno why --}}
                         
 
-                        <button
+                        <button 
                         type="submit" 
-                        class="text-gray-700 italic hover:text-gray-900 pb-1 border-b-2"
+                        class=" likeButton text-gray-700 italic hover:text-gray-900 pb-1 border-b-2"
                         >
-                        Like:    {{$post->Likes}}
                         </button>
                         
 
