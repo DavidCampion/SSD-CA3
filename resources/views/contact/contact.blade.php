@@ -26,14 +26,17 @@
     <h1 class="sm:text-white text-5xl uppercase font-bold text-shadow-md pb-14">
         Have you any Questions for Us?
     </h1>
-    <form 
+    <form
+        class="form" 
         action="/confirmSent"
         method="POST"
         enctype="multipart/form-data">
         @method('GET')
         @csrf
       
-
+        
+            <fieldset>
+                <legend>Your Details</legend>
         <input 
             type="text"
             name="commentsName"
@@ -51,14 +54,17 @@
             name="commentsPhone"
             placeholder="Please enter phone"
             class="bg-transparent block border-b-2 w-full h-20 text-6xl outline-none">      
-            
+            </fieldset>
+            <br/>
+            <fieldset>
+            <legend>Your Comment</legend>
         <textarea 
             rows="4" cols="50"
             name="commentsMessage"
             placeholder="Feedback...."
             class="py-20 bg-transparent block border-b-2 w-full h-60 text-xl outline-none">
         </textarea>
-
+            </fieldset>
         <button    
             type="submit"
             class="uppercase mt-15 bg-blue-500 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
