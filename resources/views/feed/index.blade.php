@@ -63,6 +63,7 @@
                         type="submit" 
                         class=" likeButton text-gray-700 italic hover:text-gray-900 pb-1 border-b-2"
                         >
+                        Like:    {{$post->Likes}}
                         </button>
                         
 
