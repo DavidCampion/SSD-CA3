@@ -13,9 +13,3 @@
     background-size: cover;
     height: 600px;
 }
-.likeButton
-{
-    background-image: url('../images/heart.png');
-    height: 50px;
-    width: 50px;
-}

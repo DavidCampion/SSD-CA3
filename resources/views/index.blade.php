@@ -10,7 +10,7 @@
                 <a 
                     href="/feed"
                     class="text-center bg-gray-50 text-gray-700 py-2 px-4 font-bold text-xl uppercase">
-                    View your friends post!!
+                    Dive In
                 </a>
             </div>
         </div>

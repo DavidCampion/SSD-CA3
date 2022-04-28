@@ -20,7 +20,7 @@
         <header class="bg-menu-gray py-6">
             <div class="container mx-auto flex justify-between items-center px-6">
                 <div>
-                    <a href="{{ url('/') }}" class="text-pri-color font-semibold text-gray-100 no-underline">
+                    <a href="{{ url('/feed') }}" class="text-pri-color font-semibold text-gray-100 no-underline">
                         Postd
                     </a>
                 </div>
