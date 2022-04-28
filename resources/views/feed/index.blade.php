@@ -18,13 +18,12 @@
             Create post
         </a>
     </div>
-    
 @endif
 <div class="post-grid">
     @foreach ($posts as $post)
         <div class="post-block bg-post-gray">
             <span class="text-gray-500">
-                <span class="font-bold italic text-pri-color">{{ $post->user->name }}</span>
+                <a href="/user/{{ $post->user->id }}" class="font-bold italic text-pri-color">{{ $post->user->name }}</a>
             </span>
 
             
@@ -44,7 +43,13 @@
                 </p>
                 
 
-               
+                {{-- <button
+                type="submit"
+                value="{{$post->Likes}}" 
+
+                >
+                Like
+                </button> --}}
 
                 <span class="font-bold italic text-pri-color">
                     <form 
