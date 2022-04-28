@@ -18,6 +18,7 @@
             Create post
         </a>
     </div>
+    
 @endif
 <div class="post-grid">
     @foreach ($posts as $post)
@@ -43,13 +44,7 @@
                 </p>
                 
 
-                {{-- <button
-                type="submit"
-                value="{{$post->Likes}}" 
-
-                >
-                Like
-                </button> --}}
+               
 
                 <span class="font-bold italic text-pri-color">
                     <form 
