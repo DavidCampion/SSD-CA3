@@ -32,10 +32,10 @@
             </div>
             <button 
                 type="submit" 
-                class=" likeButton text-gray-700 italic hover:text-gray-900 pb-1 border-b-2"
-                >
+                class="likeButton text-gray-700 italic pb-1 border-b-2"
+                ><img src="{{ asset('images/heart-solid.png') }}" />
                 Like:    {{$post->Likes}}
-                </button>
+            </button>
             <div>
                 <h2 class="text-pri-color font-bold text-5xl pb-4">
                     {{ $post->title }}
