@@ -11,7 +11,7 @@
 
 <div class="w-4/5 m-auto pt-20">
     <span class="text-gray-500">
-        By <a class="no-underline hover: underline" href="/user/{{ $post->user->id }}">{{ $post->user->name }}</a>, Created on {{ date('jS M Y', strtotime($post->updated_at)) }}
+        <a class="no-underline hover: underline" href="/user/{{ $post->user->id }}">{{ $post->user->name }}</a>, Postd on {{ date('jS M Y', strtotime($post->updated_at)) }}
     </span>
     <div class="post-image">
         <img src="{{ asset('images/' . $post->image_path) }}" alt="">

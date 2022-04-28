@@ -16,9 +16,14 @@
 <div class="post-grid">
     @foreach ($posts as $post)
         @if ($loop->first)
-            <h1 class="sm:text-white text-5xl uppercase font-bold text-shadow-md pb-14">{{ $post->user->name }}</h1>  
+            <h1 class="sm:text-white mar-lef-rig text-5xl font-bold text-shadow-md pb-14">{{ $post->user->name }}</h1>  
         @endif
     @endforeach
+</div>
+<div class="posts-button">
+    <ul>
+        <li id="button-styling-1"><a>Posts</a></li> 
+    </ul>
 </div>
 <div class="post-grid-page">
     @foreach ($posts as $post)
@@ -32,7 +37,7 @@
                         <span class="float-left">
                             <a 
                                 href="/feed/{{ $post->slug }}/edit"
-                                class="text-gray-700 italic hover:text-gray-900 pb-1 border-b-2">
+                                class="text-gray-700 italic hover:text-gray-900 font-bold border-b-2">
                                 Edit
                             </a>
                         </span>
@@ -45,7 +50,7 @@
                                 @method('delete')
 
                                 <button
-                                    class="text-red-500 pr-3"
+                                    class="text-red-500 font-bold"
                                     type="submit">
                                     Delete
                                 </button>

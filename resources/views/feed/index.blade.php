@@ -22,69 +22,33 @@
 <div class="post-grid">
     @foreach ($posts as $post)
         <div class="post-block bg-post-gray">
-            <span class="text-gray-500">
+            <span class="text-gray-500 post-user">
                 <a href="/user/{{ $post->user->id }}" class="font-bold italic text-pri-color">{{ $post->user->name }}</a>
             </span>
-
             
             <div class="post-image">
                 <img src="{{ asset('images/' . $post->image_path) }}" alt="">
             </div>
-            <button 
-                type="submit" 
-                class="likeButton text-gray-700 italic pb-1 border-b-2"
-                ><img src="{{ asset('images/heart-solid.png') }}" />
-                Like:    {{$post->Likes}}
-            </button>
+            <div class="button-like">
+                <button 
+                    type="submit" 
+                    class="likeButton text-gray-700 pb-1">
+                    <img src="{{ asset('images/heart-solid.png') }}" alt="">
+                    {{$post->Likes}}
+                </button>
+            </div>  
             <div>
-                <h2 class="text-pri-color font-bold text-5xl pb-4">
+                <h2 class="text-pri-color font-bold font-size-20 post-text">
                     {{ $post->title }}
                 </h2>
-                <span class="text-sec-color">
+                <p class="text-xl text-sec-color leading-8 font-light post-text">
+                    {{ $post->description }}
+                </p>
+                <span class="text-sec-color post-date">
                     {{ date('jS M Y', strtotime($post->updated_at)) }}
                 </span>
 
-                <p class="text-xl text-sec-color pt-8 pb-10 leading-8 font-light">
-                    {{ $post->description }}
-                </p>
-                
-
-                {{-- <button
-                type="submit"
-                value="{{$post->Likes}}" 
-
-                >
-                Like
-                </button> --}}
-
                 <a href="/feed/{{ $post->slug }}" class="link-button"></a>
-
-                @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
-                    <span class="float-right">
-                        <a 
-                            href="/feed/{{ $post->slug }}/edit"
-                            class="text-gray-700 italic hover:text-gray-900 pb-1 border-b-2">
-                            Edit
-                        </a>
-                    </span>
-
-                    <span class="float-right">
-                        <form 
-                            action="/feed/{{ $post->slug }}"
-                            method="POST">
-                            @csrf
-                            @method('delete')
-
-                            <button
-                                class="text-red-500 pr-3"
-                                type="submit">
-                                Delete
-                            </button>
-                            
-
-                        </form>
-                    </span>
-                @endif
             </div>
         </div>    
     @endforeach
