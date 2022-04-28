@@ -4,12 +4,3 @@
 
 @import "tailwindcss/utilities";
 
-.background-image 
-{
-    background-image: url('../images/banner.png');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    height: 100vh;
-}
