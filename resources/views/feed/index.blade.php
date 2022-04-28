@@ -30,6 +30,12 @@
             <div class="post-image">
                 <img src="{{ asset('images/' . $post->image_path) }}" alt="">
             </div>
+            <button 
+                type="submit" 
+                class=" likeButton text-gray-700 italic hover:text-gray-900 pb-1 border-b-2"
+                >
+                Like:    {{$post->Likes}}
+                </button>
             <div>
                 <h2 class="text-pri-color font-bold text-5xl pb-4">
                     {{ $post->title }}
@@ -50,28 +56,6 @@
                 >
                 Like
                 </button> --}}
-
-                <span class="font-bold italic text-pri-color">
-                    <form 
-                        action="/feed"
-                        method="POST">
-                        @csrf
-                         {{--@method('increment') commented out because it says the post method dosent accept increment ?? dunno why --}}
-                        
-
-                        <button 
-                        type="submit" 
-                        class=" likeButton text-gray-700 italic hover:text-gray-900 pb-1 border-b-2"
-                        >
-                        Like:    {{$post->Likes}}
-                        </button>
-                        
-
-                    </form>
-                </span>
-                
-
-                   
 
                 <a href="/feed/{{ $post->slug }}" class="link-button"></a>
 
