@@ -16,7 +16,7 @@
 <div class="post-grid">
     @foreach ($posts as $post)
         @if ($loop->first)
-            <h1 class="sm:text-white text-5xl uppercase font-bold text-shadow-md pb-14">{{ $post->user->name }} Posts</h1>  
+            <h1 class="sm:text-white text-5xl uppercase font-bold text-shadow-md pb-14">{{ $post->user->name }}</h1>  
         @endif
     @endforeach
 </div>
