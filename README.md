@@ -14,7 +14,8 @@ Setting up your development environment on your local machine: <br>
 
 ### enter php artisan serve into the terminal to run
 
-
+# Enjoy the Site
+ ![shake-and-bake-ricky-bobby](https://user-images.githubusercontent.com/92158849/159341385-9904389c-ab90-4457-977c-fbff50b99984.gif)
 
 
 
